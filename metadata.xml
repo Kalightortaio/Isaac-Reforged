@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+    <name>Isaac Reforged</name>
+    <directory>isaac reforged</directory>
+    <id>2349100735</id>
+    <description>[h1]Isaac Reforged![/h1]
+This mod aims to add and rebalance characters, synergies, and transformations, while remaining faithful to the vanilla experience.
+
+Supports External Item Descriptions!
+Supports Mod Config Menu!
+Supports Revelations!
+Supports Friend Folio!
+&amp; More!
+
+[h1]Features:[/h1]
+[list]
+  [*]A new trinket called the Right Hand, the holy counter to the Left Hand
+  [*]Eternal Chests will always pay out with something, and have a small chance to teleport you to an Angel Room
+  [*]I Found Pills gives a random pill effect
+  [*]Several Transformations have been buffed or modified
+  [*]All characters start with innate and starting trinkets
+  [*]Plenty of new syngergies between vanilla items
+[/list]
+
+[h1]Transformations:[/h1]
+The Bob Transformation
+[list]
+  [*]Grants all passive items in the transformation
+  [*]Bob's Bladder contributes to the transformation
+[/list]
+The Conjoined Transformation
+[list]
+  [*]Grants an extra trinket slot
+  [*]Gives the cancer trinket
+[/list]
+The Oh Crap Transformation 
+[list]
+  [*]Grants all passive items in the transformation
+  [*]Butt Bombs, No. 2, and Number One contribute to the transformation
+[/list]
+The Adult Transformation
+[list]
+  [*]Gives Depression
+[/list]
+The Spider Baby Transformation
+[list]
+  [*]Grants all passive items in the transformation
+[/list]
+The Seraphim Transformation
+[list]
+  [*]Gives the Soul
+[/list]
+The Duality Transformation
+[list]
+  [*]Gives Duality and Eucharist
+  [*]Achieved by holding the Left and Right Hands
+[/list]
+The Magneto Transformation
+[list]
+  [*]Gives all passive items in the transformation
+  [*]Reflects 100% of enemy shots back at them
+  [*]Achieved by collecting two of the following: Magneto, Strange Attractor, Metal Plate, Broken Magnet, and Super Magnet
+[/list]
+
+[h1]Starting Trinkets:[/h1]
+[list]
+  [*]Isaac gets the effect of Golden Horse Shoe and starts with Bag Lunch
+  [*]Magdalene gets the effect of Purple Heart and starts with Maggy's Faith
+  [*]Cain gets the effect of Lucky Toe and starts with Paper Clip 
+  [*]Judas gets the effect of Black Feather and starts with Judas' Tongue 
+  [*]XXX gets the effect of Meconium and starts with Petrified Poop
+  [*]Eve gets the effect of Daemon's Tail and starts with Wish Bone 
+  [*]Samson gets the effect of Samson's Lock and starts with Child's Heart
+  [*]Azazel gets the effect of A Missing Page and starts with Curved Horn
+  [*]Lazarus gets the effect of Lost Cork and starts with Rosary Bead
+  [*]Eden gets the effect of Error (404)
+  [*]The Lost starts with the Faded Polaroid
+  [*]Lilith gets the effect of Black Lipstick and starts with Blind Rage
+  [*]The Keeper gets the effect of Rib of Greed and starts with Store Key
+  [*]Apollyon gets the effect of Callus and starts with Locust of Conquest 
+  [*]The Forgotten gets the effect of Crow Heart and starts with Finger Bone
+[/list]
+
+[h1]New Syngergies[/h1]
+[list]
+  [*] None yet!
+[/list]
+
+Let me know if you enjoy the mod, find any bugs, have any suggestions or criticisms!
+</description>
+    <version>1.1</version>
+    <visibility>Public</visibility>
+    <tag id="Lua"/>
+    <tag id="Items"/>
+    <tag id="Active Items"/>
+    <tag id="Pickups"/>
+    <tag id="Familiars"/>
+    <tag id="Tweaks"/>
+    <tag id="Removals"/>
+</metadata>
