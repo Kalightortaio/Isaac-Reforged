@@ -19,7 +19,7 @@ Supports Friend Folio!
   [*]I Found Pills gives a random pill effect
   [*]Several Transformations have been buffed or modified
   [*]All characters start with innate and starting trinkets
-  [*]Plenty of new syngergies between vanilla items
+  [*]Plenty of new syngergies between vanilla items (WIP)
 [/list]
 
 [h1]Transformations:[/h1]
@@ -44,11 +44,19 @@ The Adult Transformation
 [/list]
 The Spider Baby Transformation
 [list]
-  [*]Grants all passive items in the transformation
+  [*]Grants Spider Bite, Spider Mod, and Spider Baby
 [/list]
 The Seraphim Transformation
 [list]
   [*]Gives the Soul
+[/list]
+The Fun Guy Transformation
+[list]
+  [*]Grants all passive items in the transformation except for God's Flesh
+[/list]
+The Beelzbub Transformation
+[list]
+  [*]Gives Muligan and 3 Pretty Flies
 [/list]
 The Duality Transformation
 [list]
@@ -71,7 +79,7 @@ The Magneto Transformation
   [*]XXX gets the effect of Meconium and starts with Petrified Poop
   [*]Eve gets the effect of Daemon's Tail and starts with Wish Bone 
   [*]Samson gets the effect of Samson's Lock and starts with Child's Heart
-  [*]Azazel gets the effect of A Missing Page and starts with Curved Horn
+  [*]Azazel gets the effect of A Missing Page and starts with the Left Hand
   [*]Lazarus gets the effect of Lost Cork and starts with Rosary Bead
   [*]Eden gets the effect of Error (404)
   [*]The Lost starts with the Faded Polaroid
@@ -88,11 +96,12 @@ The Magneto Transformation
 
 Let me know if you enjoy the mod, find any bugs, have any suggestions or criticisms!
 </description>
-    <version>1.1</version>
+    <version>1.2</version>
     <visibility>Public</visibility>
     <tag id="Lua"/>
     <tag id="Items"/>
     <tag id="Active Items"/>
+    <tag id="Trinkets"/>
     <tag id="Pickups"/>
     <tag id="Familiars"/>
     <tag id="Tweaks"/>

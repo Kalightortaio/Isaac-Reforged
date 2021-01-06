@@ -2,7 +2,7 @@ ISR = RegisterMod("Isaac Reforged", 1)
 local json = require("json")
 require("isr_config")
 ISR.Config = ISR.DefaultConfig
-ISR.Config.Version = "1.0"
+ISR.Config.Version = "1.2"
 ISR.GameState = {}
 ISR.hasConjoined = false
 ISR.hasAdult = false
@@ -13,11 +13,12 @@ ISR.hasBob = false
 ISR.hasSeraphim = false
 ISR.hasBeelzbub = false
 ISR.hasMagneto = false
+TrinketType.TRINKET_FF_RIGHT_HAND = Isaac.GetTrinketIdByName("The Right Hand")
 TrinketType.TRINKET_RIGHT_HAND = Isaac.GetTrinketIdByName(" The Right Hand ")
 PillEffect.PILLEFECT_DUALITY = Isaac.GetPillEffectByName("Duality!")
 PillEffect.PILLEFECT_MAGNETO = Isaac.GetPillEffectByName("Magneto!")
 require("isr_config_menu")
-Isaac.ConsoleOutput("Isaac Reforged v" .. ISR.Config.Version .. ": Just out of Alpha!\n")
+Isaac.ConsoleOutput("Isaac Reforged v" .. ISR.Config.Version .. ": Thank you Blind, the Bound Demon\n")
 
 if EID then
     EID:addTrinket(TrinketType.TRINKET_RIGHT_HAND, "Turns all chests into eternal chests")
@@ -157,7 +158,7 @@ function ISR:onUpdate()
                 -- Holding: Curved Horn
                 player:AddTrinket(TrinketType.TRINKET_MISSING_PAGE)
                 player:UseActiveItem(CollectibleType.COLLECTIBLE_SMELTER, false, false, true, true)
-                player:AddTrinket(TrinketType.TRINKET_CURVED_HORN)
+                player:AddTrinket(TrinketType.TRINKET_LEFT_HAND)
             elseif ISR.Config["StartingTrinketsLazarus"] and player:GetPlayerType() == PlayerType.PLAYER_LAZARUS and player:GetTrinket(0) == 0 then
                 -- Innate: Lost Cork
                 -- Holding: Rosary Bead
@@ -347,9 +348,6 @@ function ISR:onUpdate()
         end
         if player:HasPlayerForm(PlayerForm.PLAYERFORM_SPIDERBABY) and not ISR.hasSpiderBaby then
             ISR.hasSpiderBaby = true
-            if not player:HasCollectible(CollectibleType.COLLECTIBLE_MUTANT_SPIDER) then
-                player:AddCollectible(CollectibleType.COLLECTIBLE_MUTANT_SPIDER, 1, false)
-            end
             if not player:HasCollectible(CollectibleType.COLLECTIBLE_SPIDER_BITE) then
                 player:AddCollectible(CollectibleType.COLLECTIBLE_SPIDER_BITE, 1, false)
             end
@@ -537,3 +535,14 @@ function ISR:onPill(pill)
 end
 
 ISR:AddCallback(ModCallbacks.MC_USE_PILL, ISR.onPill)
+
+----------------------------
+-- Replacing Modded Items --
+----------------------------
+function ISR:onMorph(_, variant, subtype)
+    if variant == PickupVariant.PICKUP_TRINKET and subtype == TrinketType.TRINKET_FF_RIGHT_HAND then
+        return {PickupVariant.PICKUP_TRINKET, TrinketType.TRINKET_RIGHT_HAND}
+    end
+end
+
+ISR:AddCallback(ModCallbacks.MC_POST_PICKUP_SELECTION, ISR.onMorph)

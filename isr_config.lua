@@ -38,7 +38,7 @@ ISR.DefaultConfig = {
     ["StartingTrinketsKeeper"] = true,
     -- Toggles if custom trinkets should be added
     -- Default = true
-    ["StartingTrinketsIApollyon"] = true,
+    ["StartingTrinketsApollyon"] = true,
     -- Toggles if custom trinkets should be added
     -- Default = true
     ["StartingTrinketsForgotten"] = true,
