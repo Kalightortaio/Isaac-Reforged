@@ -44,4 +44,19 @@ ISR.DefaultConfig = {
     ["StartingTrinketsForgotten"] = true,
     -- Toggles if custom trinkets should be added
     -- Default = true
+    ["doConjoined"] = true,
+    ["doAdult"] = true,
+    ["doMushroom"] = true,
+    ["doCrap"] = true,
+    ["doSpiderBaby"] = true,
+    ["doBob"] = true,
+    ["doSeraphim"] = true,
+    ["doMagneto"] = true,
+    ["doBeelzbub"] = true,
+    ["doRightHand"] = true,
+    ["doCainsOtherEye"] = true,
+    ["doLostHolyMantle"] = true,
+    ["doFoundPills"] = true,
+    ["doEternalChests"] = true,
+    ["doTrollTimer"] = true,
 }

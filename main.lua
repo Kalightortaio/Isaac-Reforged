@@ -2,7 +2,7 @@ ISR = RegisterMod("Isaac Reforged", 1)
 local json = require("json")
 require("isr_config")
 ISR.Config = ISR.DefaultConfig
-ISR.Config.Version = "1.2"
+ISR.Config.Version = "1.5"
 ISR.GameState = {}
 ISR.hasConjoined = false
 ISR.hasAdult = false
@@ -13,14 +13,19 @@ ISR.hasBob = false
 ISR.hasSeraphim = false
 ISR.hasBeelzbub = false
 ISR.hasMagneto = false
+ISR.ActiveItemTimer = 0
+ISR.usedFireExtinguisher = false
+CollectibleType.COLLECTIBLE_FIRE_EXTINGUISHER = Isaac.GetItemIdByName(" Fire Extinguisher ")
 TrinketType.TRINKET_FF_RIGHT_HAND = Isaac.GetTrinketIdByName("The Right Hand")
 TrinketType.TRINKET_RIGHT_HAND = Isaac.GetTrinketIdByName(" The Right Hand ")
 PillEffect.PILLEFECT_DUALITY = Isaac.GetPillEffectByName("Duality!")
 PillEffect.PILLEFECT_MAGNETO = Isaac.GetPillEffectByName("Magneto!")
+PillEffect.PILLEFECT_CYBORG = Isaac.GetPillEffectByName("Cybernetic!")
 require("isr_config_menu")
-Isaac.ConsoleOutput("Isaac Reforged v" .. ISR.Config.Version .. ": Thank you Blind, the Bound Demon\n")
+Isaac.ConsoleOutput("Isaac Reforged v" .. ISR.Config.Version .. ": Check out Items Reforged!\n")
 
 if EID then
+    EID:addCollectible(CollectibleType.COLLECTIBLE_FIRE_EXTINGUISHER, "Puts out fires... and enemies!")
     EID:addTrinket(TrinketType.TRINKET_RIGHT_HAND, "Turns all chests into eternal chests")
     EID:addPill(PillEffect.PILLEFFECT_I_FOUND_PILLS, "It's a mystery")
 end
@@ -170,8 +175,11 @@ function ISR:onUpdate()
                 player:AddTrinket(TrinketType.TRINKET_ERROR)
                 player:UseActiveItem(CollectibleType.COLLECTIBLE_SMELTER, false, false, true, true)
             elseif ISR.Config["StartingTrinketsLost"] and player:GetPlayerType() == PlayerType.PLAYER_THELOST and player:GetTrinket(0) == 0 then
-                -- Holding: Faded Polaroid
+                -- Innate: Faded Polaroid
+                -- Holding: Fragmented Card
                 player:AddTrinket(TrinketType.TRINKET_FADED_POLAROID)
+                player:UseActiveItem(CollectibleType.COLLECTIBLE_SMELTER, false, false, true, true)
+                player:AddTrinket(TrinketType.TRINKET_FRAGMENTED_CARD)
             elseif ISR.Config["StartingTrinketsLilith"] and player:GetPlayerType() == PlayerType.PLAYER_LILITH and player:GetTrinket(0) == 0 then
                 -- Innate: Black Lipstick
                 -- Holding: Blind Rage
@@ -195,29 +203,32 @@ function ISR:onUpdate()
                 player:AddTrinket(TrinketType.TRINKET_CROW_HEART)
                 player:UseActiveItem(CollectibleType.COLLECTIBLE_SMELTER, false, false, true, true)
                 player:AddTrinket(TrinketType.TRINKET_FINGER_BONE)            
-            end   
+            end
         end
     end
     for playerNum = 1, Game():GetNumPlayers() do
         local player = Game():GetPlayer(playerNum - 1)
+        local room = Game():GetRoom()
         --------------------
         -- Eternal Chests --
         --------------------
-        for _, entity in pairs(Isaac.FindByType(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_ETERNALCHEST, -1, false, false)) do
-            local data = entity:GetData()
-            if data.EternalChestTimer == nil then
-                data.EternalChestTimer = 0
-            elseif entity.SubType == ChestSubType.CHEST_CLOSED then
-                data.EternalChestTimer = 0
-            elseif entity.SubType == ChestSubType.CHEST_OPENED then
-                data.EternalChestTimer = data.EternalChestTimer + 1
-            end
-            if data.EternalChestTimer > 60 then
-                data.EternalChestTimer = 0
-                entity:ToPickup():Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_ETERNALCHEST, -1, false)
-                if math.random(100) < 8 then
-                    player:AnimateTeleport(0)
-                    Isaac.ExecuteCommand("goto s.angel")
+        if ISR.Config["doEternalChests"] then
+            for _, entity in pairs(Isaac.FindByType(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_ETERNALCHEST, -1, false, false)) do
+                local data = entity:GetData()
+                if data.EternalChestTimer == nil then
+                    data.EternalChestTimer = 0
+                elseif entity.SubType == ChestSubType.CHEST_CLOSED then
+                    data.EternalChestTimer = 0
+                elseif entity.SubType == ChestSubType.CHEST_OPENED then
+                    data.EternalChestTimer = data.EternalChestTimer + 1
+                end
+                if data.EternalChestTimer > 60 then
+                    data.EternalChestTimer = 0
+                    entity:ToPickup():Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_ETERNALCHEST, -1, false)
+                    if math.random(100) < 8 then
+                        player:AnimateTeleport(0)
+                        Isaac.ExecuteCommand("goto s.angel")
+                    end
                 end
             end
         end
@@ -227,7 +238,7 @@ function ISR:onUpdate()
         if ISR.hasConjoined and not player:HasPlayerForm(PlayerForm.PLAYERFORM_BABY) then
             ISR.hasConjoined = false
         end
-        if player:HasPlayerForm(PlayerForm.PLAYERFORM_BABY) and not ISR.hasConjoined then
+        if player:HasPlayerForm(PlayerForm.PLAYERFORM_BABY) and not ISR.hasConjoined and ISR.Config["doConjoined"] then
             ISR.hasConjoined = true
             player:AddCollectible(CollectibleType.COLLECTIBLE_BELLY_BUTTON, 1, false)
             Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_TRINKET, TrinketType.TRINKET_CANCER, player.Position, Vector(0,0), player)
@@ -235,7 +246,7 @@ function ISR:onUpdate()
         ------------------------------
         -- The Right and Left Hands --
         ------------------------------
-        if (player:GetTrinket(0) == TrinketType.TRINKET_RIGHT_HAND and player:GetTrinket(1) == TrinketType.TRINKET_LEFT_HAND) or (player:GetTrinket(0) == TrinketType.TRINKET_LEFT_HAND and player:GetTrinket(1) == TrinketType.TRINKET_RIGHT_HAND) then
+        if (player:GetTrinket(0) == TrinketType.TRINKET_RIGHT_HAND and player:GetTrinket(1) == TrinketType.TRINKET_LEFT_HAND) or (player:GetTrinket(0) == TrinketType.TRINKET_LEFT_HAND and player:GetTrinket(1) == TrinketType.TRINKET_RIGHT_HAND) and ISR.Config["doRightHand"] then
             player:TryRemoveTrinket(TrinketType.TRINKET_RIGHT_HAND)
             player:TryRemoveTrinket(TrinketType.TRINKET_LEFT_HAND)
             SFXManager():Play(SoundEffect.SOUND_POWERUP_SPEWER, 1.0, 0, false, 1.0)
@@ -249,7 +260,7 @@ function ISR:onUpdate()
         if ISR.hasAdult and not player:HasPlayerForm(PlayerForm.PLAYERFORM_ADULTHOOD) then
             ISR.hasAdult = false
         end
-        if player:HasPlayerForm(PlayerForm.PLAYERFORM_ADULTHOOD) and not ISR.hasAdult then
+        if player:HasPlayerForm(PlayerForm.PLAYERFORM_ADULTHOOD) and not ISR.hasAdult and ISR.Config["doAdult"] then
             ISR.hasAdult = true
             if not player:HasCollectible(CollectibleType.COLLECTIBLE_DEPRESSION) then
                 player:AddCollectible(CollectibleType.COLLECTIBLE_DEPRESSION, 1, false)
@@ -261,7 +272,7 @@ function ISR:onUpdate()
         if ISR.hasMushroom and not player:HasPlayerForm(PlayerForm.PLAYERFORM_MUSHROOM) then
             ISR.hasMushroom = false
         end
-        if player:HasPlayerForm(PlayerForm.PLAYERFORM_MUSHROOM) and not ISR.hasMushroom then
+        if player:HasPlayerForm(PlayerForm.PLAYERFORM_MUSHROOM) and not ISR.hasMushroom and ISR.Config["doMushroom"] then
             ISR.hasMushroom = true
             if not player:HasCollectible(CollectibleType.COLLECTIBLE_ONE_UP) then
                 player:AddCollectible(CollectibleType.COLLECTIBLE_ONE_UP, 1, false)
@@ -285,7 +296,7 @@ function ISR:onUpdate()
         --------------------------------
         -- The Oh Crap Transformation --
         --------------------------------
-        if not ISR.hasCrap then
+        if not ISR.hasCrap and ISR.Config["doCrap"] then
             local hasCrapCounter = 0
             if player:HasCollectible(CollectibleType.COLLECTIBLE_BUTT_BOMBS) then
                 hasCrapCounter = hasCrapCounter + 1
@@ -303,6 +314,9 @@ function ISR:onUpdate()
                 hasCrapCounter = hasCrapCounter + 1
             end
             if player:HasCollectible(CollectibleType.COLLECTIBLE_FLUSH) then
+                hasCrapCounter = hasCrapCounter + 1
+            end
+            if player:HasCollectible(CollectibleType.COLLECTIBLE_FARTING_BABY) then
                 hasCrapCounter = hasCrapCounter + 1
             end
             if hasCrapCounter > 2 then
@@ -325,7 +339,7 @@ function ISR:onUpdate()
         if ISR.hasCrap and not player:HasPlayerForm(PlayerForm.PLAYERFORM_POOP) then
             ISR.hasCrap = false
         end
-        if player:HasPlayerForm(PlayerForm.PLAYERFORM_POOP) and not ISR.hasCrap then
+        if player:HasPlayerForm(PlayerForm.PLAYERFORM_POOP) and not ISR.hasCrap and ISR.Config["doCrap"] then
             ISR.hasCrap = true
             if not player:HasCollectible(CollectibleType.COLLECTIBLE_BUTT_BOMBS) then
                 player:AddCollectible(CollectibleType.COLLECTIBLE_BUTT_BOMBS, 1, false)
@@ -339,6 +353,9 @@ function ISR:onUpdate()
             if not player:HasCollectible(CollectibleType.COLLECTIBLE_E_COLI) then
                 player:AddCollectible(CollectibleType.COLLECTIBLE_E_COLI, 1, false)
             end
+            if not player:HasCollectible(CollectibleType.COLLECTIBLE_FARTING_BABY) then
+                player:AddCollectible(CollectibleType.COLLECTIBLE_FARTING_BABY, 1, false)
+            end
         end
         ------------------------------------
         -- The Spider Baby Transformation --
@@ -346,7 +363,7 @@ function ISR:onUpdate()
         if ISR.hasSpiderBaby and not player:HasPlayerForm(PlayerForm.PLAYERFORM_SPIDERBABY) then
             ISR.hasSpiderBaby = false
         end
-        if player:HasPlayerForm(PlayerForm.PLAYERFORM_SPIDERBABY) and not ISR.hasSpiderBaby then
+        if player:HasPlayerForm(PlayerForm.PLAYERFORM_SPIDERBABY) and not ISR.hasSpiderBaby and ISR.Config["doSpiderBaby"] then
             ISR.hasSpiderBaby = true
             if not player:HasCollectible(CollectibleType.COLLECTIBLE_SPIDER_BITE) then
                 player:AddCollectible(CollectibleType.COLLECTIBLE_SPIDER_BITE, 1, false)
@@ -361,7 +378,7 @@ function ISR:onUpdate()
         ----------------------------
         -- The Bob Transformation --
         ----------------------------
-        if not ISR.hasBob then
+        if not ISR.hasBob and ISR.Config["doBob"] then
             local hasBobCounter = 0
             if player:HasCollectible(CollectibleType.COLLECTIBLE_BOBS_BRAIN) then
                 hasBobCounter = hasBobCounter + 1
@@ -398,7 +415,7 @@ function ISR:onUpdate()
         if ISR.hasBob and not player:HasPlayerForm(PlayerForm.PLAYERFORM_BOB) then
             ISR.hasBob = false
         end
-        if player:HasPlayerForm(PlayerForm.PLAYERFORM_BOB) and not ISR.hasBob then
+        if player:HasPlayerForm(PlayerForm.PLAYERFORM_BOB) and not ISR.hasBob and ISR.Config["doBob"] then
             ISR.hasBob = true
             if not player:HasCollectible(CollectibleType.COLLECTIBLE_BOBS_BRAIN) then
                 player:AddCollectible(CollectibleType.COLLECTIBLE_BOBS_BRAIN, 1, false)
@@ -419,7 +436,7 @@ function ISR:onUpdate()
         if ISR.hasSeraphim and not player:HasPlayerForm(PlayerForm.PLAYERFORM_ANGEL) then
             ISR.hasSeraphim = false
         end
-        if player:HasPlayerForm(PlayerForm.PLAYERFORM_ANGEL) and not ISR.hasSeraphim then
+        if player:HasPlayerForm(PlayerForm.PLAYERFORM_ANGEL) and not ISR.hasSeraphim and ISR.Config["doSeraphim"] then
             ISR.hasSeraphim = true
             if not player:HasCollectible(CollectibleType.COLLECTIBLE_SOUL) then
                 player:AddCollectible(CollectibleType.COLLECTIBLE_SOUL, 1, false)
@@ -431,7 +448,7 @@ function ISR:onUpdate()
         if ISR.hasBeelzbub and not player:HasPlayerForm(PlayerForm.PLAYERFORM_LORD_OF_THE_FLIES) then
             ISR.hasBeelzbub = false
         end
-        if player:HasPlayerForm(PlayerForm.PLAYERFORM_LORD_OF_THE_FLIES) and not ISR.hasBeelzbub then
+        if player:HasPlayerForm(PlayerForm.PLAYERFORM_LORD_OF_THE_FLIES) and not ISR.hasBeelzbub and ISR.Config["doBeelzbub"] then
             ISR.hasBeelzbub = true
             if not player:HasCollectible(CollectibleType.COLLECTIBLE_MULLIGAN) then
                 player:AddCollectible(CollectibleType.COLLECTIBLE_MULLIGAN, 1, false)
@@ -442,7 +459,7 @@ function ISR:onUpdate()
         --------------------------------
         -- The Magneto Transformation --
         --------------------------------
-        if not ISR.hasMagneto then
+        if not ISR.hasMagneto and ISR.Config["doMagneto"] then
             local hasMagnetoCounter = 0
             if player:HasCollectible(CollectibleType.COLLECTIBLE_MAGNETO) then
                 hasMagnetoCounter = hasMagnetoCounter + 1
@@ -484,7 +501,7 @@ function ISR:onUpdate()
             player:TryRemoveNullCostume(Isaac.GetCostumeIdByPath("gfx/characters/magneto.anm2"))
             ISR.hasMagneto = false
         end
-        if ISR.hasMagneto == true then
+        if ISR.hasMagneto == true and ISR.Config["doMagneto"] then
             for _, entity in ipairs(Isaac.FindInRadius(player.Position, 40, EntityPartition.BULLET)) do
                 if entity.SpawnerType ~= EntityType.ENTITY_PLAYER and entity:GetData().initMagneto == nil then
                     entity:GetData().initMagneto = 1
@@ -496,10 +513,36 @@ function ISR:onUpdate()
                 end
             end
         end
+        ------------------------------
+        -- Cain's Other Eye Synergy --
+        ------------------------------
+        if player:GetPlayerType() == PlayerType.PLAYER_CAIN and player:HasCollectible(CollectibleType.COLLECTIBLE_CAINS_OTHER_EYE) and ISR.Config["doCainsOtherEye"] then
+            if not player:HasCollectible(CollectibleType.COLLECTIBLE_20_20) then
+                player:AddCollectible(CollectibleType.COLLECTIBLE_20_20, 0, false)
+            end
+        end
+        --------------------------
+        -- The Lost Holy Mantle --
+        --------------------------
+        if player:GetPlayerType() == PlayerType.PLAYER_THELOST and not player:HasCollectible(CollectibleType.COLLECTIBLE_HOLY_MANTLE) and ISR.Config["doLostHolyMantle"] then
+            player:AddCollectible(CollectibleType.COLLECTIBLE_HOLY_MANTLE, 0, false)
+        end
     end
 end
 
 ISR:AddCallback(ModCallbacks.MC_POST_UPDATE, ISR.onUpdate)
+
+-----------------
+-- Troll Bombs --
+-----------------
+function ISR:onBombInit(bomb)
+    if ISR.Config["doTrollTimer"] then
+        if bomb.Variant == BombVariant.BOMB_TROLL or bomb.Variant == BombVariant.BOMB_SUPERTROLL then
+            bomb:SetExplosionCountdown(60)
+        end
+    end
+end
+ISR:AddCallback(ModCallbacks.MC_POST_BOMB_INIT, ISR.onBombInit)
 
 function ISR:chestInit(chest)
     for playerNum = 1, Game():GetNumPlayers() do
@@ -507,7 +550,7 @@ function ISR:chestInit(chest)
         --------------------
         -- The Right Hand --
         --------------------
-        if player:HasTrinket(TrinketType.TRINKET_RIGHT_HAND) then
+        if player:HasTrinket(TrinketType.TRINKET_RIGHT_HAND) and ISR.Config["doRightHand"] then
             chest:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_ETERNALCHEST, -1, true)
         end
     end
@@ -524,7 +567,7 @@ function ISR:onPill(pill)
     for playerNum = 1, Game():GetNumPlayers() do
         local player = Game():GetPlayer(playerNum - 1)
         local itemPool = Game():GetItemPool()
-        if pill == PillEffect.PILLEFFECT_I_FOUND_PILLS and pill == itemPool:GetPillEffect(player:GetPill(0)) then
+        if pill == PillEffect.PILLEFFECT_I_FOUND_PILLS and pill == itemPool:GetPillEffect(player:GetPill(0)) and ISR.Config["doFoundPills"] then
             local randomPill
             repeat
                 randomPill = math.random(0, 46)
@@ -540,7 +583,7 @@ ISR:AddCallback(ModCallbacks.MC_USE_PILL, ISR.onPill)
 -- Replacing Modded Items --
 ----------------------------
 function ISR:onMorph(_, variant, subtype)
-    if variant == PickupVariant.PICKUP_TRINKET and subtype == TrinketType.TRINKET_FF_RIGHT_HAND then
+    if variant == PickupVariant.PICKUP_TRINKET and subtype == TrinketType.TRINKET_FF_RIGHT_HAND and ISR.Config["doRightHand"] then
         return {PickupVariant.PICKUP_TRINKET, TrinketType.TRINKET_RIGHT_HAND}
     end
 end
