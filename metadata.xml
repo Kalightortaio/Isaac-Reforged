@@ -83,7 +83,7 @@ The Magneto Transformation
   [*]XXX gets the effect of Meconium and starts with Petrified Poop
   [*]Eve gets the effect of Daemon's Tail and starts with Wish Bone 
   [*]Samson gets the effect of Samson's Lock and starts with Child's Heart
-  [*]Azazel gets the effect of A Missing Page and starts with the Left Hand
+  [*]Azazel gets the effect of A Missing Page and starts with Tape Worm
   [*]Lazarus gets the effect of Lost Cork and starts with Rosary Bead
   [*]Eden gets the effect of Error (404)
   [*]The Lost gets the Faded Polaroid and starts with Fragmented Card
@@ -95,7 +95,7 @@ The Magneto Transformation
 
 Let me know if you enjoy the mod, find any bugs, have any suggestions or criticisms!
 </description>
-    <version>1.5</version>
+    <version>1.5.1</version>
     <visibility>Public</visibility>
     <tag id="Lua"/>
     <tag id="Items"/>

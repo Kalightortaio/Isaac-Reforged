@@ -1,8 +1,12 @@
+--------------------------------------------------------------------------------------------------
+-- Isaac Reforged by Kalightortaio, Krishna Kokatay, 2020. http://www.kalightortaio.com         --
+-- A huge thank you to Lytebringr, Wofsauge, and the #modding-dev community in the TBOI Discord --
+--------------------------------------------------------------------------------------------------
 ISR = RegisterMod("Isaac Reforged", 1)
 local json = require("json")
 require("isr_config")
 ISR.Config = ISR.DefaultConfig
-ISR.Config.Version = "1.5"
+ISR.Config.Version = "1.5.1"
 ISR.GameState = {}
 ISR.hasConjoined = false
 ISR.hasAdult = false
@@ -22,7 +26,7 @@ PillEffect.PILLEFECT_DUALITY = Isaac.GetPillEffectByName("Duality!")
 PillEffect.PILLEFECT_MAGNETO = Isaac.GetPillEffectByName("Magneto!")
 PillEffect.PILLEFECT_CYBORG = Isaac.GetPillEffectByName("Cybernetic!")
 require("isr_config_menu")
-Isaac.ConsoleOutput("Isaac Reforged v" .. ISR.Config.Version .. ": Check out Items Reforged!\n")
+Isaac.ConsoleOutput("Isaac Reforged v" .. ISR.Config.Version .. ": Next update... Tinted Ground!\n")
 
 if EID then
     EID:addCollectible(CollectibleType.COLLECTIBLE_FIRE_EXTINGUISHER, "Puts out fires... and enemies!")
@@ -84,6 +88,13 @@ function ISR:onStart()
                 for key, value in pairs(ISR.Config) do
                     ISR.Config[key] = savedISRConfig[key]
                 end
+            elseif savedISRConfig.Version ~= nil and savedISRConfig.Version ~= ISR.Config.Version then
+                for key, value in pairs(ISR.Config) do
+                    if savedISRConfig[key] ~= nil then
+                        ISR.Config[key] = savedISRConfig[key]
+                    end
+                end
+                ISR.Config.Version = "1.5.1"
             end
         end
     end
@@ -163,7 +174,7 @@ function ISR:onUpdate()
                 -- Holding: Curved Horn
                 player:AddTrinket(TrinketType.TRINKET_MISSING_PAGE)
                 player:UseActiveItem(CollectibleType.COLLECTIBLE_SMELTER, false, false, true, true)
-                player:AddTrinket(TrinketType.TRINKET_LEFT_HAND)
+                player:AddTrinket(TrinketType.TRINKET_TAPE_WORM)
             elseif ISR.Config["StartingTrinketsLazarus"] and player:GetPlayerType() == PlayerType.PLAYER_LAZARUS and player:GetTrinket(0) == 0 then
                 -- Innate: Lost Cork
                 -- Holding: Rosary Bead
