@@ -9,7 +9,7 @@ This mod aims to add and rebalance characters, synergies, and transformations, w
 Supports External Item Descriptions!
 Supports Mod Config Menu!
 Supports Revelations!
-Supports Friend Folio!
+Supports Fiend Folio!
 &amp; More!
 
 All changes are configurable with the Mod Config Menu. (May require a restart during a run)
@@ -24,6 +24,7 @@ All changes are configurable with the Mod Config Menu. (May require a restart du
   [*]The Lost never loses Holy Mantle on rerolls.
   [*]When Cain collects Cain's other eye, he gets 20/20 vision.
   [*]Troll Bombs will uniformly detonate after 2 seconds.
+  [*]Tinted Ground, a once per floor opportunity to a crawlspace and a chance to enter the black market!
 [/list]
 
 [h1]Transformations:[/h1]
@@ -87,7 +88,7 @@ The Magneto Transformation
   [*]Lazarus gets the effect of Lost Cork and starts with Rosary Bead
   [*]Eden gets the effect of Error (404)
   [*]The Lost gets the Faded Polaroid and starts with Fragmented Card
-  [*]Lilith gets the effect of Black Lipstick and starts with Blind Rage
+  [*]Lilith gets the effect of Child Leash and starts with Blind Rage
   [*]The Keeper gets the effect of Rib of Greed and starts with Store Key
   [*]Apollyon gets the effect of Callus and starts with Locust of Conquest 
   [*]The Forgotten gets the effect of Crow Heart and starts with Finger Bone
@@ -95,7 +96,7 @@ The Magneto Transformation
 
 Let me know if you enjoy the mod, find any bugs, have any suggestions or criticisms!
 </description>
-    <version>1.5.1</version>
+    <version>1.6.3</version>
     <visibility>Public</visibility>
     <tag id="Lua"/>
     <tag id="Items"/>

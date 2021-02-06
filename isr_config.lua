@@ -59,4 +59,5 @@ ISR.DefaultConfig = {
     ["doFoundPills"] = true,
     ["doEternalChests"] = true,
     ["doTrollTimer"] = true,
+    ["doTintedGround"] = true,
 }

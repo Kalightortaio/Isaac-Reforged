@@ -25,6 +25,27 @@ if MCMLoaded then
         {
             Type = ModConfigMenu.OptionType.BOOLEAN,
             CurrentSetting = function()
+                return ISR.Config["doTintedGround"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doTintedGround"] then
+					onOff = "True"
+				end
+				return "Tinted Ground: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doTintedGround"] = currentBool
+            end,
+            Info = {"Toggles additional mechanics"}
+        }
+    )
+    MCM.AddSetting(
+        "Isaac Reforged",
+        "General",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
                 return ISR.Config["doTrollTimers"]
             end,
             Display = function()
