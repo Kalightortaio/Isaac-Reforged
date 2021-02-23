@@ -46,17 +46,17 @@ if MCMLoaded then
         {
             Type = ModConfigMenu.OptionType.BOOLEAN,
             CurrentSetting = function()
-                return ISR.Config["doTrollTimers"]
+                return ISR.Config["doTrollTimer"]
             end,
             Display = function()
 				local onOff = "False"
-				if ISR.Config["doTrollTimers"] then
+				if ISR.Config["doTrollTimer"] then
 					onOff = "True"
 				end
 				return "Uniform Troll Timers: " .. onOff
             end,
             OnChange = function(currentBool)
-				ISR.Config["doTrollTimers"] = currentBool
+				ISR.Config["doTrollTimer"] = currentBool
             end,
             Info = {"Toggles additional mechanics"}
         }

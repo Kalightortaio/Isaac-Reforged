@@ -7,7 +7,7 @@ local json = require("json")
 local Game = Game()
 require("isr_config")
 ISR.Config = ISR.DefaultConfig
-ISR.Config.Version = "1.6.2"
+ISR.Config.Version = "1.6.3"
 ISR.GameState = {}
 ISR.EntityList = {
     Bombs = {}
@@ -74,7 +74,7 @@ function ISR:onStart()
                         ISR.Config[key] = savedISRConfig[key]
                     end
                 end
-                ISR.Config.Version = "1.6"
+                ISR.Config.Version = "1.6.3"
             end
         end
     end
