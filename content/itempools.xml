@@ -1,0 +1,80 @@
+<ItemPools>
+    <Pool Name="treasure">
+      <Item Name=" Philospher's Stone " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" Moon Tablet " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" D3 " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" D19 " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" Tammy's Tail " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" Tammy's Eyes " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" Tammy's Body " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" Snail's Pace " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+    <Pool Name="greedTreasure">
+      <Item Name=" Philospher's Stone " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" Moon Tablet " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" D3 " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" D19 " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" Tammy's Tail " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" Tammy's Eyes " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" Tammy's Body " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" Snail's Pace " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+    <Pool Name="goldenChest">
+      <Item Name=" Philospher's Stone " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" Moon Tablet " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" D3 " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" D19 " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" Tammy's Tail " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" Tammy's Eyes " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" Tammy's Body " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" Snail's Pace " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+    <Pool Name="devil">
+      <Item Name=" Cricket's Collar " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" Cricket's Paw " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+    <Pool Name="greedDevil">
+      <Item Name=" Cricket's Collar " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" Cricket's Paw " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>    
+    </Pool>
+    <Pool Name="redChest">
+      <Item Name=" Cricket's Collar " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" Cricket's Paw " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+    <Pool Name="curse">
+      <Item Name=" Cricket's Collar " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" Cricket's Paw " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" D3 " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+    <Pool Name="shop">
+      <Item Name=" Loaded Deck " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" Strange Parts " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" Sack of Keys " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+    <Pool Name="secret">
+      <Item Name=" Philospher's Stone " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" Moon Tablet " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" Sack of Keys " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" D3 " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+    <Pool Name="keyMaster">
+      <Item Name=" Sack of Keys " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+    <Pool Name="bossrush">
+      <Item Name=" Philospher's Stone " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" Moon Tablet " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" D3 " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" D19 " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" Tammy's Tail " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" Tammy's Eyes " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" Tammy's Body " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" Sack of Keys " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" Snail's Pace " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" Loaded Deck " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" Strange Parts " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+    <Pool Name="dungeon">
+      <Item Name=" Sack of Keys " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+      <Item Name=" Strange Parts " Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+</ItemPools>

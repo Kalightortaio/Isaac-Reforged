@@ -1,3 +1,28 @@
 <items gfxroot="gfx/items/" version="1">
-    <trinket name=" The Right Hand " description="The right-hand path reaps light rewards" gfx="the_right_hand.png"/>
+    <!-- Actives -->
+	<active id="1" name=" Philospher's Stone " description="The secret of alchemy!"                  gfx="philosophers_stone.png" maxcharges="6" />
+	<active id="2" name=" Cricket's Paw "      description="Pain = Power"                            gfx="crickets_paw.png"       maxcharges="0" />
+	<active id="3" name=" Tammy's Paw "        description="Absorb your friends"                     gfx="tammys_paw.png"         maxcharges="1" />
+	<active id="4" name=" D3 "                 description="Rerolls curses"                          gfx="d3.png"                 maxcharges="12" />
+	<active id="5" name=" D19 "                description="Rerolls the basics, sort of"             gfx="d19.png"                maxcharges="6" />
+	<active id="6" name=" Moon Tablet "        description="Praise the Moon"                         gfx="moon_tablet.png"        maxcharges="6" />
+	<active id="7" name=" Cracked D4 "         description="Reroll into something else, carefully"   gfx="cracked_d4.png"         maxcharges="12" achievement="0"/>
+    
+    <!-- Trinkets -->
+    <trinket name=" The Right Hand "           description="The right-hand path reaps light rewards" gfx="the_right_hand.png" />
+    <trinket name=" Anti Static Keychain "     description="Keeps your keys charged"                 gfx="anti_static_keychain.png" />
+    
+    <!-- Passives -->
+    <passive id="8" name=" Snail's Pace "      description="Live life in the slow lane"              gfx="snails_pace.png"        cache="speed damage" />
+    <passive id="9" name=" Loaded Deck "       description="Have an ace up your sleeve"              gfx="loaded_deck.png" />
+    <passive id="10" name=" Cricket's Collar " description="Return to owner if found"                gfx="crickets_collar.png" />
+    <passive id="11" name=" Tammy's Tail "     description="Whips like the wind"                     gfx="tammys_tail.png"        cache="speed" />
+    <passive id="12" name=" Tammy's Eyes "     description="Cat eyes see all"                        gfx="tammys_eyes.png" />
+    <passive id="13" name=" Tammy's Body "     description="They crawl inside"                       gfx="tammys_body.png" />
+    <passive id="14" name=" Strange Parts "    description="What is a strange weapon?"               gfx="strange_parts.png" />
+    
+    <!-- Familiars -->
+    <familiar id="15" name=" Bag of Holding "  description="It's bigger on the inside!?"             gfx="bag_of_holding.png" />
+    <familiar id="16" name=" Sack of Keys "    description="Gives keys"                              gfx="sack_of_keys.png" />
 </items>
+

@@ -5,4 +5,10 @@
     <entity anm2path="tiles/Marked_Ground_1.anm2" baseHP="0" boss="0" champion="0" collisionDamage="0" collisionMass="0" collisionRadius="0" friction="1" id="1000" name="Marked Ground 1" numGridCollisionPoints="24" shadowSize="0" stageHP="0" variant="46" subtype="742854313">
         <gibs amount="0" blood="0" bone="0" eye="0" gut="0" large="0" />
     </entity>
+    <entity anm2path="items/collectibles/holding.anm2" baseHP="0" boss="0" champion="0" collisionDamage="0" collisionMass="0" collisionRadius="0" friction="1" id="3" name=" Bag of Holding " numGridCollisionPoints="12" shadowSize="12" stageHP="0" variant="82">
+        <gibs amount="0" blood="0" bone="0" eye="0" gut="0" large="0" />
+    </entity>
+    <entity anm2path="items/collectibles/sackofkeys.anm2" baseHP="0" boss="0" champion="0" collisionDamage="0" collisionMass="0" collisionRadius="0" friction="1" id="3" name=" Sack of Keys " numGridCollisionPoints="12" shadowSize="12" stageHP="0" variant="82">
+        <gibs amount="0" blood="0" bone="0" eye="0" gut="0" large="0" />
+    </entity>
 </entities>

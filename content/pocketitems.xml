@@ -1,4 +1,22 @@
 <pocketitems>
-    <pilleffect achievement="0" name="Duality!" />
-    <pilleffect achievement="0" name="Magneto!" />
+    <pilleffect achievement="0" name=" Duality " />
+    <pilleffect achievement="0" name=" Magneto " />
+    <pilleffect achievement="0" name=" Greed " />
+    <pilleffect achievement="0" name=" Cyborg " />
+    <pilleffect achievement="0" name=" Butcher " />
+    <pilleffect achievement="0" name=" Astrologer " />
+    <pilleffect achievement="0" name=" Master Alchemist " />
+    <pilleffect achievement="0" name=" Bag of Holding " />
+    <pilleffect achievement="0" name=" Dungeon Delver " />
+    <pilleffect achievement="0" name=" Card Dealer " />
+    <pilleffect achievement="0" name=" Trick or Treat " />
+    <pilleffect achievement="0" name=" Bony " />
+    <pilleffect achievement="0" name=" Stony " />
+    <pilleffect achievement="0" name=" Eternal " />
+    <pilleffect achievement="0" name=" Cricket " />
+    <pilleffect achievement="0" name=" Tammy " />
+    <pilleffect name=" Shotspeed Up " />
+    <pilleffect name=" Shotspeed Down " />
+    <pilleffect name=" Damage Up " />
+    <pilleffect name=" Damage Down " />
 </pocketitems>

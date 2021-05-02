@@ -3,8 +3,7 @@
     <name>Isaac Reforged</name>
     <directory>isaac reforged</directory>
     <id>2349100735</id>
-    <description>[h1]Isaac Reforged![/h1]
-This mod aims to add and rebalance characters, synergies, and transformations, while remaining faithful to the vanilla experience.
+    <description>This mod aims to add and rebalance characters, synergies, and transformations, while remaining faithful to the vanilla experience.
 
 Supports External Item Descriptions!
 Supports Mod Config Menu!
@@ -14,17 +13,34 @@ Supports Fiend Folio!
 
 All changes are configurable with the Mod Config Menu. (May require a restart during a run)
 
-[h1]Features:[/h1]
+Spritework commissioned by the very talented and wonderful Blind, the Bound Demon. 
+
+[h1]Misc Features:[/h1]
 [list]
-  [*]A new trinket called the Right Hand, the holy counter to the Left Hand.
-  [*]Eternal Chests will always pay out with something, and have a small chance to teleport you to an Angel Room.
-  [*]I Found Pills gives a random pill effect.
+  [*]Eternal Chests will always pay out with something, and have a small chance to teleport you to an Angel Room. Consumes golden keys!
   [*]Several Transformations have been buffed or modified.
   [*]All characters start with innate and starting trinkets.
-  [*]The Lost never loses Holy Mantle on rerolls.
+  [*]The Lost never loses Holy Mantle on rerolls. The D4 however, takes longer to charge.
   [*]When Cain collects Cain's other eye, he gets 20/20 vision.
   [*]Troll Bombs will uniformly detonate after 2 seconds.
   [*]Tinted Ground, a once per floor opportunity to a crawlspace and a chance to enter the black market!
+[/list]
+
+[h1]Pills[/h1]
+[list]
+  [*]I Found Pills gives a random pill effect.
+  [*]R U a Wizard? grants a minor tears up for its duration.
+  [*]Bad Gas deals scales with your damage.
+  [*]Addicted spawns 1 - 3 additional pills in the room.
+  [*]+0.1 Damage Up / -0.1 Damage Down pills
+  [*]+0.1 Shotspeed Up / -0.1 Shotspeed Down pills.
+[/list]
+
+[h1]New Items:[/h1]
+[list]
+  [*]6 Active Items
+  [*]8 Passive Items
+  [*]2 Trinkets
 [/list]
 
 [h1]Transformations:[/h1]
@@ -66,13 +82,86 @@ The Beelzbub Transformation
 The Duality Transformation
 [list]
   [*]Gives Duality and Eucharist
-  [*]Achieved by holding the Left and Right Hands
+  [*]Achieved by holding the Left and Right Hands, or having Dark Prince's Crown and Crown of Light.
 [/list]
 The Magneto Transformation
 [list]
-  [*]Gives all passive items in the transformation
-  [*]Reflects 100% of enemy shots back at them
-  [*]Achieved by collecting two of the following: Magneto, Strange Attractor, Metal Plate, Broken Magnet, and Super Magnet
+  [*]requires three of the following: Magneto, Strange Attractor, Metal Plate, Broken Magnet, and Super Magnet.
+  [*]Gives all passive items in the transformation and reflects 100% of enemy shots back at them.
+[/list]
+Yes Mother?
+[list]
+  [*]Every 30 seconds, a friendly Mom's Foot will attack enemies.
+[/list]
+The Greed Transformation
+[list]
+  [*]requires three out of (Money = Power, A Quarter, A Dollar, Greed's Gullet, Eye of Greed, Head of the Keeper).
+  [*]Grants the effects of rib of greed, silver dollar, a greed costume, and when you are damaged, you have a chance to spawn coins.
+[/list]
+The Cyborg Transformation
+[list]
+  [*]requires six out of (The Battery, 9 Volt, Car Battery, Tech.5, Technology, Technology 2, Metal Plate, Robo-Baby, Robo-Baby 2.0, Technology Zero, Tech X, Spider Mod).
+  [*]Grants Metal Plate if not collected, a metallic costume, and the ability to use heart pickups to partially charge active items.
+[/list]
+The Butcher Transformation
+[list]
+  [*]requires five out of (Cricket's Head, Goat Head, Tammy's Head, Guppy's Head, Head of Krampus, Head of the Keeper, Bob's Rotten Head).
+  [*]Grants Bloody Lust and Lusty Blood if not collected, and a serial killer costume.
+[/list]
+The Astrologer Transformation
+[list]
+  [*]requires five out of (Aquarius, Aries, Cancer, Capricorn, Gemini, Leo, Libra, Pisces, Sagittarius, Scorpio, Taurus, Virgo, Zodiac).
+  [*]Grants a higher chance to encounter the rest of the zodiac signs, and a neat wizard cloak.
+[/list]
+The Master Alchemist Transformation
+[list]
+  [*]requires three of (The Mind, The Body, The Soul, Chaos, Philospher's Stone).
+  [*]Grants any missing passive items from the set, and a godhead costume.
+[/list]
+The Bag of Holding Transformation
+[list]
+  [*]requires four of (Bomb Bag, Rune Bag, Sack of Pennies, Sack of Sacks, Mystery Sack, Key Sack, Lil Chest).
+  [*]Combines existing familiars into one familiar, that drops a plethora of consumables.
+[/list]
+The Dungeon Delver Transformation
+[list]
+  [*]requires five of (We Need to go Deeper, Spelunker Hat, Notched Axe, Mine Crafter, Treasure Map, Blue Map, The Compass, A Lump of Coal, Mama Mega!).
+  [*]Grants Spelunker Hat if not collected, Curse of Darkness, an explorer's costume, and a x1.1 damage multiplier for every floor completed.
+[/list]
+The Card Dealer Transformation
+[list]
+  [*]requires four of (Portable Slot, Deck of Cards, Crooked Penny, Magic 8 Ball, Tarot Cloth, Crystal Ball, Magic Fingers, Loaded Deck).
+  [*]Grants a chance for killed enemies to drop tarot cards, and a tuxedo costume.
+[/list]
+The Trick or Treat Transformation
+[list]
+  [*]requires four of (Death's Touch, Host Hat, Ouija Board, Lil Haunt, Dry Baby, Bozo, Pop!, Apple!, Finger!).
+  [*]Grants a halloween costume, and fears any enemies that get too close.
+[/list]
+The Bony Transformation
+[list]
+  [*]requires four of (Jaw Bone, Slipped Rib, Pointy Rib, Brittle Bones, Compound Fracture, Book of the Dead, Marrow, Skeleton Key).
+  [*]Grants Compound Fracture if not collected, a bony costume, and a chance to gain an empty bone heart when taking damage.
+[/list]
+The Stony Transformation
+[list]
+  [*]requires four of (Gnawed Leaf, Lump of Coal, Flat Stone, The Small Rock, Lucky Rock, Shiny Rock, Callus).
+  [*]Grants immunity to spikes and brimstone lasers. Grants a stony costume.
+[/list]
+The Eternal Transformation
+[list]
+  [*]requires 12 eternal hearts.
+  [*]Grants Dead Dove if not collected, a pretty fly, and an eternal costume.
+[/list]
+The Cricket Transformation
+[list]
+  [*]requires three of (Cricket's Head, Cricket's Body, Cricket's Paw, Cricket's Collar, Dog Tooth, (Dinner, Dessert, A Snack).
+  [*]Grants any missing passive items from the set, and a cricket costume.
+[/list]
+The Tammy Transformation
+[list]
+  [*]requires three of (Tammy's Head, Tammy's Eyes, Tammy's Body, Tammy's Tail,  Tammy's Paw).
+  [*]Grants any missing passive items from the set, and a tammy costume.
 [/list]
 
 [h1]Starting Trinkets:[/h1]
@@ -82,10 +171,10 @@ The Magneto Transformation
   [*]Cain gets the effect of Lucky Toe and starts with Paper Clip 
   [*]Judas gets the effect of Black Feather and starts with Judas' Tongue 
   [*]XXX gets the effect of Meconium and starts with Petrified Poop
-  [*]Eve gets the effect of Daemon's Tail and starts with Wish Bone 
+  [*]Eve gets the effect of Eve's Bird Foot and starts with Wish Bone 
   [*]Samson gets the effect of Samson's Lock and starts with Child's Heart
-  [*]Azazel gets the effect of A Missing Page and starts with Tape Worm
-  [*]Lazarus gets the effect of Lost Cork and starts with Rosary Bead
+  [*]Azazel gets the effect of Tape Worm and starts with Daemon's Tail
+  [*]Lazarus gets the effect of Lost Cork and starts with Bible Tract
   [*]Eden gets the effect of Error (404)
   [*]The Lost gets the Faded Polaroid and starts with Fragmented Card
   [*]Lilith gets the effect of Child Leash and starts with Blind Rage
@@ -94,18 +183,21 @@ The Magneto Transformation
   [*]The Forgotten gets the effect of Crow Heart and starts with Finger Bone
 [/list]
 
-Let me know if you enjoy the mod, find any bugs, have any suggestions or criticisms!
-</description>
-    <version>1.6.3</version>
+Let me know if you enjoy the mod, find any bugs, have any suggestions or criticisms!</description>
+    <version>1.8</version>
     <visibility>Public</visibility>
     <tag id="Lua"/>
     <tag id="Items"/>
     <tag id="Active Items"/>
     <tag id="Trinkets"/>
     <tag id="Pills"/>
+    <tag id="Cards"/>
     <tag id="Pickups"/>
     <tag id="Player Characters"/>
     <tag id="Familiars"/>
+    <tag id="Hazards"/>
     <tag id="Tweaks"/>
     <tag id="Removals"/>
+    <tag id="Graphics"/>
+    <tag id="Sound Effects"/>
 </metadata>

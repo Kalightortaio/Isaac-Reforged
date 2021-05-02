@@ -1,3 +1,24 @@
 <costumes anm2root="gfx/characters/">
-    <costume anm2path="magneto.anm2" priority="1" type="none" />
+    <!-- Transformations -->
+    <costume anm2path="magneto.anm2"    priority="100" type="none" />
+    <costume anm2path="greed.anm2"      priority="100" type="none" />
+    <costume anm2path="cyborg.anm2"     priority="100" type="none" />
+    <costume anm2path="butcher.anm2"    priority="100" type="none" hasOverlay="true"/>
+    <costume anm2path="astrologer.anm2" priority="100" type="none" />
+    <costume anm2path="alchemist.anm2"  priority="100" type="none" />
+    <costume anm2path="delver.anm2"     priority="100" type="none" hasSkinAlt="true" />
+    <costume anm2path="dealer.anm2"     priority="100" type="none" hasSkinAlt="true" />
+    <costume anm2path="trick.anm2"      priority="100" type="none" />
+    <costume anm2path="bony.anm2"       priority="100" type="none" />
+    <costume anm2path="stony.anm2"      priority="100" type="none" />
+    <costume anm2path="eternal.anm2"    priority="100" type="none" isFlying="true"/>
+    <costume anm2path="cricket.anm2"    priority="100" type="none" />
+    <costume anm2path="tammy.anm2"      priority="100" type="none" />
+
+    <!-- Passives -->
+    <costume id="8" anm2path="snails_pace.anm2"        type="passive" hasSkinAlt="true" />
+    <costume id="9" anm2path="loaded_deck.anm2"        type="passive" hasOverlay="true" />
+    <costume id="10" anm2path="crickets_collar.anm2"   type="passive" hasOverlay="true" />
+    <costume id="12" anm2path="tammys_eyes.anm2"       type="passive" hasOverlay="true" />
+    <costume id="13" anm2path="tammys_body.anm2"       type="passive" hasOverlay="true" />
 </costumes>

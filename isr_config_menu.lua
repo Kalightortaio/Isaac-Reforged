@@ -88,6 +88,27 @@ if MCMLoaded then
         {
             Type = ModConfigMenu.OptionType.BOOLEAN,
             CurrentSetting = function()
+                return ISR.Config["doAntiStatic"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doAntiStatic"] then
+					onOff = "True"
+				end
+				return "Anti-Static Trinket: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doAntiStatic"] = currentBool
+            end,
+            Info = {"Toggles additional mechanics"}
+        }
+    )
+    MCM.AddSetting(
+        "Isaac Reforged",
+        "General",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
                 return ISR.Config["doCainsOtherEye"]
             end,
             Display = function()
@@ -130,6 +151,27 @@ if MCMLoaded then
         {
             Type = ModConfigMenu.OptionType.BOOLEAN,
             CurrentSetting = function()
+                return ISR.Config["doEternalChests"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doEternalChests"] then
+					onOff = "True"
+				end
+				return "Eternal Chests: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doEternalChests"] = currentBool
+            end,
+            Info = {"Toggles additional mechanics"}
+        }
+    )
+    MCM.AddSetting(
+        "Isaac Reforged",
+        "Pills",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
                 return ISR.Config["doFoundPills"]
             end,
             Display = function()
@@ -147,27 +189,109 @@ if MCMLoaded then
     )
     MCM.AddSetting(
         "Isaac Reforged",
-        "General",
+        "Pills",
         {
             Type = ModConfigMenu.OptionType.BOOLEAN,
             CurrentSetting = function()
-                return ISR.Config["doEternalChests"]
+                return ISR.Config["doDamage"]
             end,
             Display = function()
 				local onOff = "False"
-				if ISR.Config["doEternalChests"] then
+				if ISR.Config["doDamage"] then
 					onOff = "True"
 				end
-				return "Eternal Chests: " .. onOff
+				return "Damage Pills: " .. onOff
             end,
             OnChange = function(currentBool)
-				ISR.Config["doEternalChests"] = currentBool
+				ISR.Config["doDamage"] = currentBool
             end,
             Info = {"Toggles additional mechanics"}
         }
     )
-
-    -- Transformations
+    MCM.AddSetting(
+        "Isaac Reforged",
+        "Pills",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doShotspeed"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doShotspeed"] then
+					onOff = "True"
+				end
+				return "Shotspeed Pills: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doShotspeed"] = currentBool
+            end,
+            Info = {"Toggles additional mechanics"}
+        }
+    )
+    MCM.AddSetting(
+        "Isaac Reforged",
+        "Pills",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doBadGas"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doBadGas"] then
+					onOff = "True"
+				end
+				return "Bad Gas: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doBadGas"] = currentBool
+            end,
+            Info = {"Toggles additional mechanics"}
+        }
+    )
+    MCM.AddSetting(
+        "Isaac Reforged",
+        "Pills",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doWizard"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doWizard"] then
+					onOff = "True"
+				end
+				return "R U a Wizard: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doWizard"] = currentBool
+            end,
+            Info = {"Toggles additional mechanics"}
+        }
+    )
+    MCM.AddSetting(
+        "Isaac Reforged",
+        "Pills",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doAddicted"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doAddicted"] then
+					onOff = "True"
+				end
+				return "Addicted: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doAddicted"] = currentBool
+            end,
+            Info = {"Toggles additional mechanics"}
+        }
+    )
     MCM.AddSetting(
         "Isaac Reforged",
         "Transf.",
@@ -181,7 +305,7 @@ if MCMLoaded then
 				if ISR.Config["doConjoined"] then
 					onOff = "True"
 				end
-				return "Buffed Conjoined: " .. onOff
+				return "Conjoined: " .. onOff
             end,
             OnChange = function(currentBool)
 				ISR.Config["doConjoined"] = currentBool
@@ -202,7 +326,7 @@ if MCMLoaded then
 				if ISR.Config["doAdult"] then
 					onOff = "True"
 				end
-				return "Buffed Adult: " .. onOff
+				return "Adult: " .. onOff
             end,
             OnChange = function(currentBool)
 				ISR.Config["doAdult"] = currentBool
@@ -223,7 +347,7 @@ if MCMLoaded then
 				if ISR.Config["doMushroom"] then
 					onOff = "True"
 				end
-				return "Buffed Fun Guy: " .. onOff
+				return "Fun Guy: " .. onOff
             end,
             OnChange = function(currentBool)
 				ISR.Config["doMushroom"] = currentBool
@@ -244,7 +368,7 @@ if MCMLoaded then
 				if ISR.Config["doCrap"] then
 					onOff = "True"
 				end
-				return "Buffed Oh Crap: " .. onOff
+				return "Oh Crap: " .. onOff
             end,
             OnChange = function(currentBool)
 				ISR.Config["doCrap"] = currentBool
@@ -265,7 +389,7 @@ if MCMLoaded then
 				if ISR.Config["doSpiderBaby"] then
 					onOff = "True"
 				end
-				return "Buffed Spider Baby: " .. onOff
+				return "Spider Baby: " .. onOff
             end,
             OnChange = function(currentBool)
 				ISR.Config["doSpiderBaby"] = currentBool
@@ -286,7 +410,7 @@ if MCMLoaded then
 				if ISR.Config["doBob"] then
 					onOff = "True"
 				end
-				return "Buffed Bob: " .. onOff
+				return "Bob: " .. onOff
             end,
             OnChange = function(currentBool)
 				ISR.Config["doBob"] = currentBool
@@ -307,7 +431,7 @@ if MCMLoaded then
 				if ISR.Config["doSeraphim"] then
 					onOff = "True"
 				end
-				return "Buffed Seraphim: " .. onOff
+				return "Seraphim: " .. onOff
             end,
             OnChange = function(currentBool)
 				ISR.Config["doSeraphim"] = currentBool
@@ -328,7 +452,7 @@ if MCMLoaded then
 				if ISR.Config["doBeelzbub"] then
 					onOff = "True"
 				end
-				return "Buffed Beelzebub: " .. onOff
+				return "Beelzebub: " .. onOff
             end,
             OnChange = function(currentBool)
 				ISR.Config["doBeelzbub"] = currentBool
@@ -349,7 +473,7 @@ if MCMLoaded then
 				if ISR.Config["doMagneto"] then
 					onOff = "True"
 				end
-				return "New Magneto: " .. onOff
+				return "Magneto: " .. onOff
             end,
             OnChange = function(currentBool)
 				ISR.Config["doMagneto"] = currentBool
@@ -357,8 +481,342 @@ if MCMLoaded then
             Info = {"Toggles additional mechanics"}
         }
     )
-
-    -- Starting Trinkets
+    MCM.AddSetting(
+        "Isaac Reforged",
+        "Transf.",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doMom"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doMom"] then
+					onOff = "True"
+				end
+				return "Yes Mother? : " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doMom"] = currentBool
+            end,
+            Info = {"Toggles additional mechanics"}
+        }
+    )
+    MCM.AddSetting(
+        "Isaac Reforged",
+        "Transf.",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doDuality"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doDuality"] then
+					onOff = "True"
+				end
+				return "Duality: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doDuality"] = currentBool
+            end,
+            Info = {"Toggles additional mechanics"}
+        }
+    )
+    MCM.AddSetting(
+        "Isaac Reforged",
+        "Transf.",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doGreed"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doGreed"] then
+					onOff = "True"
+				end
+				return "Greed: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doGreed"] = currentBool
+            end,
+            Info = {"Toggles additional mechanics"}
+        }
+    )
+    MCM.AddSetting(
+        "Isaac Reforged",
+        "Transf.",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doCyborg"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doCyborg"] then
+					onOff = "True"
+				end
+				return "Cyborg: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doCyborg"] = currentBool
+            end,
+            Info = {"Toggles additional mechanics"}
+        }
+    )
+    MCM.AddSetting(
+        "Isaac Reforged",
+        "Transf.",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doButcher"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doButcher"] then
+					onOff = "True"
+				end
+				return "Butcher: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doButcher"] = currentBool
+            end,
+            Info = {"Toggles additional mechanics"}
+        }
+    )
+    MCM.AddSetting(
+        "Isaac Reforged",
+        "Transf.",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doAstrology"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doAstrology"] then
+					onOff = "True"
+				end
+				return "Astrologer: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doAstrology"] = currentBool
+            end,
+            Info = {"Toggles additional mechanics"}
+        }
+    )
+    MCM.AddSetting(
+        "Isaac Reforged",
+        "Transf.",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doAlchemist"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doAlchemist"] then
+					onOff = "True"
+				end
+				return "Alchemist: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doAlchemist"] = currentBool
+            end,
+            Info = {"Toggles additional mechanics"}
+        }
+    )
+    MCM.AddSetting(
+        "Isaac Reforged",
+        "Transf.",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doHolding"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doHolding"] then
+					onOff = "True"
+				end
+				return "Bag of Holding: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doHolding"] = currentBool
+            end,
+            Info = {"Toggles additional mechanics"}
+        }
+    )
+    MCM.AddSetting(
+        "Isaac Reforged",
+        "Transf.",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doDelver"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doDelver"] then
+					onOff = "True"
+				end
+				return "Dungeon Delver: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doDelver"] = currentBool
+            end,
+            Info = {"Toggles additional mechanics"}
+        }
+    )
+    MCM.AddSetting(
+        "Isaac Reforged",
+        "Transf.",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doDealer"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doDealer"] then
+					onOff = "True"
+				end
+				return "Card Dealer: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doDealer"] = currentBool
+            end,
+            Info = {"Toggles additional mechanics"}
+        }
+    )
+    MCM.AddSetting(
+        "Isaac Reforged",
+        "Transf.",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doTrick"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doTrick"] then
+					onOff = "True"
+				end
+				return "Trick or Treat: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doTrick"] = currentBool
+            end,
+            Info = {"Toggles additional mechanics"}
+        }
+    )
+    MCM.AddSetting(
+        "Isaac Reforged",
+        "Transf.",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doBony"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doBony"] then
+					onOff = "True"
+				end
+				return "Bony: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doBony"] = currentBool
+            end,
+            Info = {"Toggles additional mechanics"}
+        }
+    )
+    MCM.AddSetting(
+        "Isaac Reforged",
+        "Transf.",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doStony"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doStony"] then
+					onOff = "True"
+				end
+				return "Stony: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doStony"] = currentBool
+            end,
+            Info = {"Toggles additional mechanics"}
+        }
+    )
+    MCM.AddSetting(
+        "Isaac Reforged",
+        "Transf.",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doEternal"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doEternal"] then
+					onOff = "True"
+				end
+				return "Eternal: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doEternal"] = currentBool
+            end,
+            Info = {"Toggles additional mechanics"}
+        }
+    )
+    MCM.AddSetting(
+        "Isaac Reforged",
+        "Transf.",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doCricket"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doCricket"] then
+					onOff = "True"
+				end
+				return "Cricket: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doCricket"] = currentBool
+            end,
+            Info = {"Toggles additional mechanics"}
+        }
+    )
+    MCM.AddSetting(
+        "Isaac Reforged",
+        "Transf.",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doTammy"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doTammy"] then
+					onOff = "True"
+				end
+				return "Tammy: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doTammy"] = currentBool
+            end,
+            Info = {"Toggles additional mechanics"}
+        }
+    )
     MCM.AddSetting(
         "Isaac Reforged",
         "Trinkets",
@@ -672,6 +1130,300 @@ if MCMLoaded then
 				ISR.Config["StartingTrinketsForgotten"] = currentBool
             end,
             Info = {"Toggles if custom trinkets should be added"}
+        }
+    )
+    MCM.AddSetting(
+        "Isaac Reforged",
+        "Items",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doMoonTablet"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doMoonTablet"] then
+					onOff = "True"
+				end
+				return "Moon Tablet: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doMoonTablet"] = currentBool
+            end,
+            Info = {"Toggles if custom items should be added"}
+        }
+    )
+     MCM.AddSetting(
+        "Isaac Reforged",
+        "Items",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doPhilosophy"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doPhilosophy"] then
+					onOff = "True"
+				end
+				return "Philosophy Stone: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doPhilosophy"] = currentBool
+            end,
+            Info = {"Toggles if custom items should be added"}
+        }
+    )
+     MCM.AddSetting(
+        "Isaac Reforged",
+        "Items",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doCricketsPaw"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doCricketsPaw"] then
+					onOff = "True"
+				end
+				return "Cricket's Paw: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doCricketsPaw"] = currentBool
+            end,
+            Info = {"Toggles if custom items should be added"}
+        }
+    )
+     MCM.AddSetting(
+        "Isaac Reforged",
+        "Items",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doTammysPaw"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doTammysPaw"] then
+					onOff = "True"
+				end
+				return "Tammy's Paw: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doTammysPaw"] = currentBool
+            end,
+            Info = {"Toggles if custom items should be added"}
+        }
+    )
+     MCM.AddSetting(
+        "Isaac Reforged",
+        "Items",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doD3"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doD3"] then
+					onOff = "True"
+				end
+				return "The D3: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doD3"] = currentBool
+            end,
+            Info = {"Toggles if custom items should be added"}
+        }
+    )
+     MCM.AddSetting(
+        "Isaac Reforged",
+        "Items",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doD19"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doD19"] then
+					onOff = "True"
+				end
+				return "The D19: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doD19"] = currentBool
+            end,
+            Info = {"Toggles if custom items should be added"}
+        }
+    )
+     MCM.AddSetting(
+        "Isaac Reforged",
+        "Items",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doSackOfKeys"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doSackOfKeys"] then
+					onOff = "True"
+				end
+				return "Sack of Keys: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doSackOfKeys"] = currentBool
+            end,
+            Info = {"Toggles if custom items should be added"}
+        }
+    )
+     MCM.AddSetting(
+        "Isaac Reforged",
+        "Items",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doSnailsPace"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doSnailsPace"] then
+					onOff = "True"
+				end
+				return "Snails Pace: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doSnailsPace"] = currentBool
+            end,
+            Info = {"Toggles if custom items should be added"}
+        }
+    )
+     MCM.AddSetting(
+        "Isaac Reforged",
+        "Items",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doLoadedDeck"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doLoadedDeck"] then
+					onOff = "True"
+				end
+				return "Loaded Deck: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doLoadedDeck"] = currentBool
+            end,
+            Info = {"Toggles if custom items should be added"}
+        }
+    )
+     MCM.AddSetting(
+        "Isaac Reforged",
+        "Items",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doCricketsCollar"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doCricketsCollar"] then
+					onOff = "True"
+				end
+				return "Cricket's Collar: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doCricketsCollar"] = currentBool
+            end,
+            Info = {"Toggles if custom items should be added"}
+        }
+    )
+     MCM.AddSetting(
+        "Isaac Reforged",
+        "Items",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doTammysTail"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doTammysTail"] then
+					onOff = "True"
+				end
+				return "Tammy's Tail: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doTammysTail"] = currentBool
+            end,
+            Info = {"Toggles if custom items should be added"}
+        }
+    )
+     MCM.AddSetting(
+        "Isaac Reforged",
+        "Items",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doTammysEyes"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doTammysEyes"] then
+					onOff = "True"
+				end
+				return "Tammy's Eyes: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doTammysEyes"] = currentBool
+            end,
+            Info = {"Toggles if custom items should be added"}
+        }
+    )
+     MCM.AddSetting(
+        "Isaac Reforged",
+        "Items",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doTammysBody"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doTammysBody"] then
+					onOff = "True"
+				end
+				return "Tammy's Body: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doTammysBody"] = currentBool
+            end,
+            Info = {"Toggles if custom items should be added"}
+        }
+    )
+     MCM.AddSetting(
+        "Isaac Reforged",
+        "Items",
+        {
+            Type = ModConfigMenu.OptionType.BOOLEAN,
+            CurrentSetting = function()
+                return ISR.Config["doStrangeParts"]
+            end,
+            Display = function()
+				local onOff = "False"
+				if ISR.Config["doStrangeParts"] then
+					onOff = "True"
+				end
+				return "Strange Parts: " .. onOff
+            end,
+            OnChange = function(currentBool)
+				ISR.Config["doStrangeParts"] = currentBool
+            end,
+            Info = {"Toggles if custom items should be added"}
         }
     )
 end

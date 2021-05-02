@@ -1,49 +1,25 @@
 ISR.DefaultConfig = {
+    -----------------------
+    -- Starting Trinkets --
+    -----------------------
     ["StartingTrinketsIsaac"] = true,
-    -- Toggles if custom trinkets should be added
-    -- Default = true
     ["StartingTrinketsMagdalene"] = true,
-    -- Toggles if custom trinkets should be added
-    -- Default = true
     ["StartingTrinketsCain"] = true,
-    -- Toggles if custom trinkets should be added
-    -- Default = true
     ["StartingTrinketsJudas"] = true,
-    -- Toggles if custom trinkets should be added
-    -- Default = true
     ["StartingTrinketsXXX"] = true,
-    -- Toggles if custom trinkets should be added
-    -- Default = true
     ["StartingTrinketsEve"] = true,
-    -- Toggles if custom trinkets should be added
-    -- Default = true
     ["StartingTrinketsSamson"] = true,
-    -- Toggles if custom trinkets should be added
-    -- Default = true
     ["StartingTrinketsAzazel"] = true,
-    -- Toggles if custom trinkets should be added
-    -- Default = true
     ["StartingTrinketsLazarus"] = true,
-    -- Toggles if custom trinkets should be added
-    -- Default = true
     ["StartingTrinketsEden"] = true,
-    -- Toggles if custom trinkets should be added
-    -- Default = true
     ["StartingTrinketsLost"] = true,
-    -- Toggles if custom trinkets should be added
-    -- Default = true
     ["StartingTrinketsLilith"] = true,
-    -- Toggles if custom trinkets should be added
-    -- Default = true
     ["StartingTrinketsKeeper"] = true,
-    -- Toggles if custom trinkets should be added
-    -- Default = true
     ["StartingTrinketsApollyon"] = true,
-    -- Toggles if custom trinkets should be added
-    -- Default = true
     ["StartingTrinketsForgotten"] = true,
-    -- Toggles if custom trinkets should be added
-    -- Default = true
+    ---------------------
+    -- Transformations --
+    ---------------------
     ["doConjoined"] = true,
     ["doAdult"] = true,
     ["doMushroom"] = true,
@@ -53,11 +29,59 @@ ISR.DefaultConfig = {
     ["doSeraphim"] = true,
     ["doMagneto"] = true,
     ["doBeelzbub"] = true,
+    ["doMom"] = true,
+    ["doDuality"] = true,
+    ["doGreed"] = true,
+    ["doCyborg"] = true,
+    ["doButcher"] = true,
+    ["doAstrology"] = true,
+    ["doAlchemist"] = true,
+    ["doHolding"] = true,
+    ["doDelver"] = true,
+    ["doDealer"] = true,
+    ["doTrick"] = true,
+    ["doBony"] = true,
+    ["doStony"] = true,
+    ["doEternal"] = true,
+    ["doCricket"] = true,
+    ["doTammy"] = true,
+    --------------
+    -- Trinkets --
+    --------------
+    ["doAntiStatic"] = true,
     ["doRightHand"] = true,
+    -----------
+    -- Pills --
+    -----------
+    ["doDamage"] = true,
+    ["doShotspeed"] = true,
+    ["doFoundPills"] = true,
+    ["doBadGas"] = true,
+    ["doWizard"] = true,
+    ["doAddicted"] = true,
+    ---------------
+    -- Mechanics --
+    ---------------
     ["doCainsOtherEye"] = true,
     ["doLostHolyMantle"] = true,
-    ["doFoundPills"] = true,
     ["doEternalChests"] = true,
     ["doTrollTimer"] = true,
     ["doTintedGround"] = true,
+    -----------
+    -- Items --
+    -----------
+    ["doMoonTablet"] = true,
+    ["doPhilosophy"] = true,
+    ["doCricketsPaw"] = true,
+    ["doTammysPaw"] = true,
+    ["doD3"] = true,
+    ["doD19"] = true,
+    ["doSackOfKeys"] = true,
+    ["doSnailsPace"] = true,
+    ["doLoadedDeck"] = true,
+    ["doCricketsCollar"] = true,
+    ["doTammysTail"] = true,
+    ["doTammysEyes"] = true,
+    ["doTammysBody"] = true,
+    ["doStrangeParts"] = true,
 }
